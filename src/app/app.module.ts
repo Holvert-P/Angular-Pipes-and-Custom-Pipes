@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 
 import { VentasModule } from './ventas/ventas.module';
 import { SharedModule } from './shared/shared.module';
-import { AppRouterModule } from './ventas/appRouter.module';
+import { AppRouterModule } from './appRouter.module';
 
 // primeNg
 

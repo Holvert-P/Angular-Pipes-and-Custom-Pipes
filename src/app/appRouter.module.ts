@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BasicosComponent } from './pages/basicos/basicos.component';
-import { NumerosComponent } from './pages/numeros/numeros.component';
-import { NocomunesComponent } from './pages/nocomunes/nocomunes.component';
-import { OrdenarComponent } from './pages/ordenar/ordenar.component';
+import { BasicosComponent } from './ventas/pages/basicos/basicos.component';
+import { NumerosComponent } from './ventas/pages/numeros/numeros.component';
+import { NocomunesComponent } from './ventas/pages/nocomunes/nocomunes.component';
+import { OrdenarComponent } from './ventas/pages/ordenar/ordenar.component';
 
 const routes: Routes = [
   {
@@ -26,8 +26,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot([])],
+  imports: [RouterModule.forRoot(routes)],
   declarations: [],
-  exports: [],
+  exports: [RouterModule],
 })
 export class AppRouterModule {}
