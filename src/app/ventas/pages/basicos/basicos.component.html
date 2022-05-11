@@ -1,11 +1,60 @@
 <section>
-  <h1>Pipes Basicos</h1>
-  <p>Pipes son una forma de filtrar datos en una aplicación.</p>
-  <div class="grid">
-    <div class="col-4">
-      <p-card>Content</p-card>
-    </div>
-    <div class="col-4">2</div>
-    <div class="col-4">3</div>
-  </div>
+  <h2>Pipes Basicos</h2>
+  <p>Pipes incluidos en Angular, usualmente en el CommonModule</p>
+</section>
+<section class="grid">
+  <article class="col-4">
+    <p-card
+      header="Uppercase"
+      [subheader]="nombre |uppercase"></p-card>
+  </article>
+  <article class="col-4">
+    <p-card
+      header="lowercase"
+      [subheader]="nombre |lowercase"></p-card>
+  </article>
+  <article class="col-4">
+    <p-card
+      header="Titlecase"
+      [subheader]="nombre |titlecase"></p-card>
+  </article>
+</section>
+<h2>Date | Fecha | Pipe</h2>
+<p>Pipe para mostrar fechas</p>
+<section class="grid">
+  <article class="col-6">
+    <p-card>
+      <ul>
+        <li>Fecha</li>
+        <li>Fecha | Date</li>
+        <li>Fecha | Date:short</li>
+        <li>Fecha | Date:long</li>
+        <li>Fecha | Date:custom</li>
+      </ul>
+
+      <hr>
+      <ul>
+        <li>fecha | date:'long'</li>
+        <li>fecha | date:'long':'GMT-4'</li>
+        <li>fecha | date:'long':'':'en'</li>
+      </ul>
+    </p-card>
+  </article>
+  <article class="col-6">
+    <p-card>
+      <ul>
+        <li>{{fecha }}</li>
+        <li>{{fecha | date}}</li>
+        <li>{{fecha | date:'short'}}</li>
+        <li>{{fecha | date:'long'}}</li>
+        <li>{{fecha | date:'EEEE dd MMMM - hh:mm a'}}</li>
+      </ul>
+      <hr>
+      <ul>
+        <li>{{fecha | date:'long'}}</li>
+        <li>{{fecha | date:'long':'GMT-4'}}</li>
+        <li>{{fecha | date:'long':'':'en'}}</li>
+      </ul>
+    </p-card>
+  </article>
 </section>

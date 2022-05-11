@@ -4,7 +4,7 @@ import { NocomunesComponent } from './pages/nocomunes/nocomunes.component';
 import { BasicosComponent } from './pages/basicos/basicos.component';
 import { OrdenarComponent } from './pages/ordenar/ordenar.component';
 import { NumerosComponent } from './pages/numeros/numeros.component';
-import { CardModule } from 'primeng/card';
+import { PrimeNGModule } from '../primeNG/primeNG.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { CardModule } from 'primeng/card';
     OrdenarComponent,
     NumerosComponent,
   ],
-  imports: [CommonModule, CardModule],
+  imports: [CommonModule, PrimeNGModule],
   exports: [
     NocomunesComponent,
     BasicosComponent,

@@ -1,1 +1,99 @@
-<p>nocomunes works!</p>
+<section>
+  <h2>Pipes no tan comunes</h2>
+  <p>Pipes incluidos en Angular, usualmente en el CommonModule</p>
+</section>
+<section class="grid">
+  <article class="col-sm-6 md-6">
+    <p-fieldset
+      legend="i18nSelect Pipe"
+      [toggleable]="true">
+      <p>
+        Saludos {{nombre}}, es un placer {{genero | i18nSelect:invitacionMap}} al evento.
+   </p>
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Cambiar Persona"
+        icon="pi pi-user-edit"
+        (click)="changePerson()"></button>
+    </p-fieldset>
+
+  </article>
+  <article class="col-sm-6 md-6">
+    <p-fieldset
+      legend="i18nPlural Pipe"
+      [toggleable]="true">
+      <p>
+         Actualmente  {{clientes.length | i18nPlural:clientesMap}}
+      </p>
+
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Borrar Cliente"
+        icon="pi pi-trash"
+        class="p-button-raised p-button-danger"
+        (click)="deletePerson()"></button>
+    </p-fieldset>
+
+  </article>
+
+  <article class="col-sm-6 md-6">
+    <p-fieldset
+      legend="Slice Pipe"
+      [toggleable]="true">
+      <strong>Original</strong>
+      <pre>{{clientes}}</pre>
+
+      <strong>slice:0:2</strong>
+      <pre>{{clientes |slice:0:2}}</pre>
+
+      <strong>slice:1:2</strong>
+      <pre>{{clientes |slice:1:2}}</pre>
+
+      <strong>slice:1:3</strong>
+      <pre>{{clientes |slice:1:3}}</pre>
+
+      <strong>slice:3:3</strong>
+      <pre>{{clientes |slice:3:3}}</pre>
+
+      <strong>slice:3:3</strong>
+      <pre>{{nombre |slice:0:3}}</pre>
+    </p-fieldset>
+
+  </article>
+
+  <article class="col-sm-6 md-6">
+    <p-fieldset
+      legend="JsonPipe"
+      [toggleable]="true">
+      <pre>{{heroes |json}}</pre>
+    </p-fieldset>
+  </article>
+
+  <article class="col-sm-6 md-6">
+    <p-fieldset
+      legend="KeyValue Pipe"
+      [toggleable]="true">
+
+      <ul>
+        <li *ngFor="let persona of persona | keyvalue">
+          <b>{{persona.key | titlecase}}: </b>{{persona.value}}
+         </li>
+      </ul>
+    </p-fieldset>
+  </article>
+
+  <article class="col-sm-6 md-6">
+    <p-fieldset
+      legend="Async Pipe"
+      [toggleable]="true">
+
+      <pre>{{miObservable | async}}</pre>
+      <pre *ngIf="!(valorPromesa |async)">Cargando...</pre>
+      <pre>{{valorPromesa | async}}</pre>
+    </p-fieldset>
+  </article>
+</section>

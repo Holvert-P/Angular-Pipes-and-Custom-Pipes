@@ -33,6 +33,7 @@ export class MenuComponent implements OnInit {
           },
         ],
       },
+      { label: 'Custom PIPES', icon: 'pi pi-desktop' },
     ];
   }
 }
