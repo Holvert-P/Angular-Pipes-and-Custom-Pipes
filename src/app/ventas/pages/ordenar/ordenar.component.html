@@ -1,1 +1,98 @@
-<p>ordenar works!</p>
+<section>
+
+  <h2>Custom Pipes</h2>
+  <p>Pipes Creados por {{"mi"| mayusculas:isMayus}}</p>
+
+</section>
+
+<p-toolbar>
+  <section class="p-toolbar-left"></section>
+  <section class="p-toolbar-group-right">
+    <button
+      pButton
+      type="button"
+      [label]="btnText"
+      class="p-button-danger"
+      icon="pi pi-sort-alpha-up"
+      (click)="change()"></button>
+    <button
+      pButton
+      label="Por Nombre"
+      class="m-1"
+      icon="pi pi-sort"
+      (click)="changeOrderBy('nombre')"></button>
+    <button
+      pButton
+      label="Vuela"
+      class="m-1"
+      icon="pi pi-sort"
+      (click)="changeOrderBy('vuela')"></button>
+    <button
+      pButton
+      label="Por Color"
+      class="m-1"
+      icon="pi pi-sort"
+      (click)="changeOrderBy('color')"></button>
+  </section>
+</p-toolbar>
+
+<section class="grid">
+  <article class="col mt-4">
+    <p-table
+      [value]="heroes | ordenar:orderBy"
+      responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Nombre</th>
+          <th>Poder</th>
+          <th>Color</th>
+
+        </tr>
+      </ng-template>
+      <ng-template
+        pTemplate="body"
+        let-heroe>
+        <tr>
+          <td>{{heroe.nombre}}</td>
+          <td>{{heroe.vuela | vuela | titlecase}}</td>
+          <td>{{heroe.color | color | titlecase}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </article>
+</section>
+
+<section class="grid">
+  <article class="col mt-4">
+    <p-table
+      [value]="heroes | slice:0"
+      responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th pSortableColumn="nombre">
+            Nombre
+            <p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="vuela">
+            Vuela
+            <p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="color">
+            Color
+            <p-sortIcon field="code"></p-sortIcon>
+          </th>
+
+        </tr>
+      </ng-template>
+      <ng-template
+        pTemplate="body"
+        let-heroe>
+        <tr>
+          <td>{{heroe.nombre}}</td>
+          <td>{{heroe.vuela | vuela | titlecase}}</td>
+          <td>{{heroe.color | color | titlecase}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </article>
+</section>
